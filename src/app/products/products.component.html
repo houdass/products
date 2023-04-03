@@ -1,0 +1,23 @@
+<section class="perfumes">
+  <div class="perfume" *ngFor="let product of products">
+    <img [src]="product.image" alt="Perfume {{ product.id }}" class="perfume__img"/>
+    <h5 class="perfume__name">{{ product.name }}</h5>
+    <div class="perfume__brand">
+      <fa-icon [icon]="faSignature"></fa-icon>
+      <p>{{ product.brand }}</p>
+    </div>
+    <div class="perfume__size">
+      <fa-icon [icon]="faFilter"></fa-icon>
+      <p>{{ product.size }} ml</p>
+    </div>
+    <div class="perfume__gender">
+      <fa-icon [icon]="faMarsVenus"></fa-icon>
+      <p>{{ product.gender }}</p>
+    </div>
+    <div class="perfume__price">
+      <fa-icon [icon]="faCoins"></fa-icon>
+      <p>{{ product.price }} CHF</p>
+    </div>
+    <button class="btn perfume__btn" (click)="addToCart(product)">Add to cart</button>
+  </div>
+</section>
